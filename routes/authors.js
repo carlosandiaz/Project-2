@@ -1,5 +1,6 @@
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
+const Author = require('../models/author')
 
 /* All Authors Route */
 router.get('/', (req, res, next) => {
@@ -8,12 +9,26 @@ router.get('/', (req, res, next) => {
 
 /* New Author Route */
 router.get('/new', (req, res, next) => {
-    res.render('authors/new');
+    res.render('authors/new', { author: new Author() });
   });
 
 /* Create Author Route */
 router.post('/' , (req, res, next) => {
-    res.send('Create');
+    const author = new Author({
+      name:req.body.name
+    })
+    author.save((err, newAuthor) => {
+      if (err){
+        res.render('authors/new', {
+          author: author,
+          errorMessage: 'Error creating Author'
+        })
+      } else {
+        
+         //res.redirect(`authors/{{newAuthor.id}}`)
+         res.redirect(`authors`)
+      }
+    })
   });
 
 module.exports = router;

@@ -27,7 +27,7 @@ const app = express();
 // Middleware Setup
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false, limit: '10mb' }));
 app.use(cookieParser());
 
 // Express View engine setup
@@ -38,7 +38,7 @@ app.use(require('node-sass-middleware')({
   sourceMap: true
 }));
       
-//app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'layouts', layoutsDir: __dirname + '/views/layouts/'}));
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
@@ -46,8 +46,12 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 
+
+hbs.registerPartial('formPartial', '{{_form_fields}}'); 
+
+
 // default value for title local
-app.locals.title = 'Project 2';
+app.locals.title = 'Design & Dev Books Repo';
 app.locals.nav = 'Navigation';
 app.locals.footer = 'Footer';
 
@@ -55,6 +59,8 @@ app.locals.footer = 'Footer';
 
 const indexRouter = require('./routes/index');
 app.use('/', indexRouter);
+const authorRouter = require('./routes/authors');
+app.use('/authors', authorRouter);
 
 
 module.exports = app;
