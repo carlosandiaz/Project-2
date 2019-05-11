@@ -8,7 +8,7 @@ router.get('/', async (req, res, next) => {
   if (req.query.name != null && req.query.name !== '' ){
 
       searchOptions.name = new RegExp(req.query.name, 'i')
-      
+  
   }
   try{ 
     const authors = await Author.find(searchOptions)
@@ -44,9 +44,5 @@ router.post('/' , async (req, res, next) => {
 
 
 
-
-
-
-
-
+  
 module.exports = router;
