@@ -6,7 +6,7 @@ const fs = require('fs')
 const Book = require('../models/book')
 const Author = require('../models/author')
 const uploadPath = path.join('public', Book.coverImageBasePath)
-const imageMimeTypes = ['image/jpeg', 'image/png', 'images/gif']
+const imageMimeTypes = ['image/jpeg', 'image/png']
 const upload = multer({
   dest: uploadPath,
   fileFilter: (req, file, callback) => {
@@ -56,13 +56,10 @@ router.post('/', upload.single('cover'), async (req, res) => {
   })
 
   try {
-    console.log('test')
     const newBook = await book.save()
     // res.redirect(`books/${newBook.id}`)
-    console.log('test2')
     res.redirect(`books`)
-  } catch (err) {
-    console.log('test3', err)
+  } catch {
     if (book.coverImageName != null) {
       removeBookCover(book.coverImageName)
     }
@@ -81,7 +78,7 @@ async function renderNewPage(res, book, hasError = false) {
     const authors = await Author.find({})
     const params = {
       authors: authors,
-      book: book
+      book: book 
     }
     if (hasError) params.errorMessage = 'Error Creating Book'
     res.render('books/new', params)

@@ -15,8 +15,8 @@
   <button type="submit">Search</button>
 </form>
 <br> 
-<ul class="book_list">
+<div class="book_list">
   {{#each books}} 
-  <li><img height="150" width="100" src="{{book.coverImagePath}}"></li>
+  <img height="150" width="100" src="{{book.coverImagePath}}">
   {{/each}}
-</ul>
+</div>
