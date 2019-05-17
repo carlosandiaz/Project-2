@@ -7,5 +7,10 @@
 <ul class="people_list">
   {{#each authors}}
   <li>{{name}}</li>
+  <li><a href="/authors/{{id}}">View</a></li>
+  <li><a href="/authors/{{id}}/edit">Edit</a></li>
+  <form method="POST" action="/authors/{{id}}?_method=DELETE">
+  <button type="submit">Delete</button>
+  </form>
   {{/each}}
 </ul>

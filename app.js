@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 const bodyParser = require("body-parser");
+const methodOverride = require('method-override')
 const cookieParser = require("cookie-parser");
 const express = require("express");
 const favicon = require("serve-favicon");
@@ -28,10 +29,12 @@ const debug = require("debug")(
 const app = express();
 
 // Middleware Setup
+
 app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false, limit: "10mb" }));
 app.use(cookieParser());
+app.use(methodOverride('_method'))
 
 // Express View engine setup
 
