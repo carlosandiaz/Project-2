@@ -3,6 +3,8 @@
 <h2>Books Recently Added</h2>
 <div class="book_list">
   {{#each books}} 
+  <a href="/books/{{id}}">
   <img height="150" width="100" src="{{coverImagePath}}">
+  </a>
   {{/each}}
 </div>
