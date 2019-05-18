@@ -1,12 +1,78 @@
-body {
-  padding: 50px;
-  font-family: 'Rubik', sans-serif; }
+@import 'shared/variables.css';
+@import 'shared/header.css';
+@import 'shared/buttons.css';
+@import 'shared/form.css';
 
-a {
-  color: #0366d6; }
+:root {
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, var(--color-background-dark), var(--color-background-light));
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+.inner-container {
+  margin: 0 2rem;
+}
+
+.main-title {
+  letter-spacing: -1.5px;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.page-header {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+body {
+  font-family: 'Rubik', sans-serif; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+a { 
+  font-weight: 400;
+  text-decoration: none;
+  color: var(--color-text-light);
+}
+
+a:hover{
+  color: white;
+  text-decoration: underline;
+}
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: -1px; }
+
+  
+.filepond--root {
+    font-family: 'Rubik';
+    margin-bottom: 0; 
+}
+  
+.filepond--panel-root {
+    background-color: var(--form-input-background-color);
+    border: 1px solid var(--form-input-border-color);
+  }
+  
+.filepond--drop-label {
+    color: var(--color-text-light);
+    font-size: inherit;
+  }
 
 /*# sourceMappingURL=style.css.map */

@@ -54,7 +54,7 @@ app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 hbs.registerPartial("formPartial", "{{_form_fields}}");
 
 // default value for title local
-app.locals.title = "Design & Dev Books Repo";
+app.locals.title = "Design & Development Books Repository";
 app.locals.nav = "Navigation";
 app.locals.footer = "Footer";
 

@@ -1,12 +1,12 @@
-<h2>{{author.name}}</h2>
+<h2 "main-title">{{author.name}}</h2>
 <a href="/authors/{{author.id}}/edit">Edit</a>
 <form method="POST" action="/authors/{{author.id}}?_method=DELETE">
-    <button type="submit">Delete</button>
+  <button class="btn btn-danger" type="submit">Delete</button>
 </form>
 <div class="book_list">
   {{#each booksByAuthor}}
   <a href="/books/{{id}}">
-  <img height="150" width="100" src="{{coverImagePath}}">
-  </a> 
+    <img height="150" width="100" src="{{coverImagePath}}">
+  </a>
   {{/each}}
 </div>

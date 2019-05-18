@@ -1,16 +1,16 @@
-<h2>Search Authors</h2>
+<h2 "main-title">Search Authors</h2>
 <form action="/authors" method="GET">
   <input type="text" name="name" value="{{searchOptions.name}}">
-  <button type="submit">Search</button>
+  <button class="btn btn-primary" type="submit">Search</button>
 </form>
 <br>
-<ul class="people_list">
-  {{#each authors}}
-  <li>{{name}}</li>
-  <li><a href="/authors/{{id}}">View</a></li>
-  <li><a href="/authors/{{id}}/edit">Edit</a></li>
+{{#each authors}}
+{{name}}
+<div class="btn-row">
+  <a class="btn btn-primary" href="/authors/{{id}}">View</a>
+  <a class="btn btn-primary" href="/authors/{{id}}/edit">Edit</a>
   <form method="POST" action="/authors/{{id}}?_method=DELETE">
-  <button type="submit">Delete</button>
+    <button class="btn btn-danger" type="submit">Delete</button>
   </form>
-  {{/each}}
-</ul>
+</div>
+{{/each}}
