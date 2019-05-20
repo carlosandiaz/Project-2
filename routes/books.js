@@ -58,7 +58,6 @@ router.get("/:id", async (req, res) => {
     const book = await Book.findById(req.params.id)
       .populate("author")
       .exec();
-    // book = book.toObject()
     console.log(book);
     let date = moment(book.publishDate).format("MMM Do YY");
     console.log(date);

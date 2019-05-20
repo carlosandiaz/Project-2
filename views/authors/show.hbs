@@ -1,12 +1,16 @@
 <h2 "main-title">{{author.name}}</h2>
-<a href="/authors/{{author.id}}/edit">Edit</a>
-<form method="POST" action="/authors/{{author.id}}?_method=DELETE">
-  <button class="btn btn-danger" type="submit">Delete</button>
+<div class="btn-row">
+  <a class="btn btn-primary" href="/authors/{{author.id}}/edit">Edit</a>
+  <form method="POST" action="/authors/{{author.id}}?_method=DELETE">
+    <button class="btn btn-danger" type="submit">Delete</button>
+</div>
 </form>
-<div class="book_list">
-  {{#each booksByAuthor}}
-  <a href="/books/{{id}}">
-    <img height="150" width="100" src="{{coverImagePath}}">
-  </a>
-  {{/each}}
+<br>
+<br>
+<div class="book-grid">
+{{#each booksByAuthor}}
+<a href="/books/{{id}}">
+  <img class="book-cover" src="{{coverImagePath}}">
+</a>
+{{/each}}
 </div>

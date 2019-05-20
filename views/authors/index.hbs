@@ -1,16 +1,30 @@
 <h2 "main-title">Search Authors</h2>
 <form action="/authors" method="GET">
-  <input type="text" name="name" value="{{searchOptions.name}}">
-  <button class="btn btn-primary" type="submit">Search</button>
+  <div class="form-row">
+    <div class="form-item">
+      <label>Name</label>
+      <input type="text" name="name" value="{{searchOptions.name}}">
+    </div>
+  </div>
+  <div class="form-row form-row-end">
+    <button class="btn btn-primary" type="submit">Search</button>
+  </div>
 </form>
 <br>
+<br>
+<br>
+<br>
 {{#each authors}}
-{{name}}
-<div class="btn-row">
-  <a class="btn btn-primary" href="/authors/{{id}}">View</a>
-  <a class="btn btn-primary" href="/authors/{{id}}/edit">Edit</a>
-  <form method="POST" action="/authors/{{id}}?_method=DELETE">
-    <button class="btn btn-danger" type="submit">Delete</button>
-  </form>
+<div class="author-row">
+  <div class="author-name">
+    {{name}}
+  </div>
+  <div class="btn-row">
+    <a class="btn btn-primary" href="/authors/{{id}}">View</a>
+    <a class="btn btn-primary" href="/authors/{{id}}/edit">Edit</a>
+    <form method="POST" action="/authors/{{id}}?_method=DELETE">
+      <button class="btn btn-danger" type="submit">Delete</button>
+    </form>
+  </div>
 </div>
 {{/each}}
