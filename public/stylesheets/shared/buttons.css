@@ -53,3 +53,20 @@
     color: var(--color-btn-danger-text-dark);
     background-color: var(--color-btn-danger-background-dark);
   }
+
+
+  
+  .filepond--root {
+    font-family: 'Rubik';
+    margin-bottom: 0; 
+}
+  
+.filepond--panel-root {
+    background-color: var(--form-input-background-color);
+    border: 1px solid var(--form-input-border-color);
+  }
+  
+.filepond--drop-label {
+    color: var(--color-text-light);
+    font-size: inherit;
+  }

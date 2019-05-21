@@ -10,58 +10,45 @@
   font-size: 20px;
   color: #FFFFFF;
 }
-
 *, *::before, *::after {
   box-sizing: border-box;
 }
-
 body {
   background: linear-gradient(to right, var(--color-background-dark), var(--color-background-light));
 }
-
 .container {
   max-width: 1200px;
   margin: auto;
   margin-bottom: 3rem;
 }
-
 .inner-container {
   margin: 0 2rem;
 }
-
 .main-title {
   letter-spacing: -1.5px;
   font-size: 1.8rem;
   font-weight: 500;
 }
-
 .page-header {
   font-size: 1.4rem;
   font-weight: 500;
 }
-
 body {
   font-family: 'Rubik', sans-serif; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-
 a { 
   font-weight: 400;
   text-decoration: none;
   color: var(--color-text-light);
 }
-
 a:hover{
   color: white;
-  text-decoration: underline;
 }
-
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   letter-spacing: -1px; }
-
   
 .filepond--root {
     font-family: 'Rubik';
@@ -77,5 +64,16 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-text-light);
     font-size: inherit;
   }
+
+.breadcrumbs{
+  font-size: 0.7rem;
+  opacity: 0.5;
+}
+
+.footer-text{
+  font-size: 0.8rem;
+  text-align: center;
+}
+
 
 /*# sourceMappingURL=style.css.map */
